@@ -1,0 +1,105 @@
+.leaderboard-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.leaderboard-container h1 {
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.period-selector {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.period-selector button {
+  padding: 0.5rem 1.5rem;
+  background-color: #e9ecef;
+  color: #333;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.period-selector button.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.period-selector button:hover {
+  border-color: #007bff;
+}
+
+.leaderboard-table {
+  overflow-x: auto;
+}
+
+.leaderboard-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.leaderboard-table thead {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.leaderboard-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: bold;
+  color: #333;
+}
+
+.leaderboard-table tbody tr {
+  border-bottom: 1px solid #dee2e6;
+  transition: background-color 0.2s;
+}
+
+.leaderboard-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.leaderboard-table tbody tr.first-place {
+  background-color: #fff3cd;
+  font-weight: bold;
+}
+
+.leaderboard-table td {
+  padding: 1rem;
+  color: #333;
+}
+
+.rank {
+  font-weight: bold;
+  color: #007bff;
+  min-width: 50px;
+}
+
+.user-name {
+  font-weight: 500;
+}
+
+.score {
+  font-weight: bold;
+  color: #28a745;
+}
+
+.error {
+  color: #dc3545;
+  padding: 1rem;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}

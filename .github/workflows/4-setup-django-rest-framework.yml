@@ -41,7 +41,7 @@ jobs:
 
       - name: Find last comment
         id: find-last-comment
-        uses: peter-evans/find-comment@v3
+        uses: peter-evans/find-comment@v4
         with:
           repository: ${{ env.ISSUE_REPOSITORY }}
           issue-number: ${{ env.ISSUE_NUMBER }}
@@ -58,22 +58,22 @@ jobs:
 
       # START: Check practical exercise
 
-      - name: Check server.ts uses codespace env variable
+      - name: Check environment.ts uses codespace env variable
         id: check-codespace-name
         continue-on-error: true
         uses: skills/action-keyphrase-checker@v2.0.0
         with:
-          text-file: octofit-tracker/backend/src/server.ts
+          text-file: octofit-tracker/backend/src/utils/environment.ts
           keyphrase: 'CODESPACE_NAME'
           minimum-occurrences: 1
-          case-sensitive: false
+          case-sensitive: true
 
-      - name: Check server.ts includes codespace URL pattern
+      - name: Check environment.ts includes codespace URL pattern
         id: check-codespace-url
         continue-on-error: true
         uses: skills/action-keyphrase-checker@v2.0.0
         with:
-          text-file: octofit-tracker/backend/src/server.ts
+          text-file: octofit-tracker/backend/src/utils/environment.ts
           keyphrase: '-8000.app.github.dev'
           minimum-occurrences: 1
           case-sensitive: false
@@ -89,9 +89,9 @@ jobs:
           vars: |
             step_number: 4
             results_table:
-              - description: "Check server.ts for CODESPACE_NAME"
+              - description: "Check environment.ts for CODESPACE_NAME"
                 passed: ${{ steps.check-codespace-name.outcome == 'success' }}
-              - description: "Check server.ts for codespace URL"
+              - description: "Check environment.ts for codespace URL"
                 passed: ${{ steps.check-codespace-url.outcome == 'success' }}
 
       # END: Check practical exercise
