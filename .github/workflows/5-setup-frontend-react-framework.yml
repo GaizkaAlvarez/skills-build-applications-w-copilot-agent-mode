@@ -58,55 +58,55 @@ jobs:
 
       # START: Check practical exercise
 
-      - name: Check for codespace API endpoint in Activities.jsx
+      - name: Check for API integration in Activities.jsx
         id: check-activities
         continue-on-error: true
         uses: skills/action-keyphrase-checker@v2.0.0
         with:
           text-file: octofit-tracker/frontend/src/components/Activities.jsx
-          keyphrase: '-8000.app.github.dev/api/activities'
+          keyphrase: 'API_ENDPOINTS'
           minimum-occurrences: 1
-          case-sensitive: false
+          case-sensitive: true
 
-      - name: Check for codespace API endpoint in Leaderboard.jsx
+      - name: Check for API integration in Leaderboard.jsx
         id: check-leaderboard
         continue-on-error: true
         uses: skills/action-keyphrase-checker@v2.0.0
         with:
           text-file: octofit-tracker/frontend/src/components/Leaderboard.jsx
-          keyphrase: '-8000.app.github.dev/api/leaderboard'
+          keyphrase: 'API_ENDPOINTS'
           minimum-occurrences: 1
-          case-sensitive: false
+          case-sensitive: true
 
-      - name: Check for codespace API endpoint in Teams.jsx
+      - name: Check for API integration in Teams.jsx
         id: check-teams
         continue-on-error: true
         uses: skills/action-keyphrase-checker@v2.0.0
         with:
           text-file: octofit-tracker/frontend/src/components/Teams.jsx
-          keyphrase: '-8000.app.github.dev/api/teams'
+          keyphrase: 'API_ENDPOINTS'
           minimum-occurrences: 1
-          case-sensitive: false
+          case-sensitive: true
 
-      - name: Check for codespace API endpoint in Users.jsx
+      - name: Check for API integration in Users.jsx
         id: check-users
         continue-on-error: true
         uses: skills/action-keyphrase-checker@v2.0.0
         with:
           text-file: octofit-tracker/frontend/src/components/Users.jsx
-          keyphrase: '-8000.app.github.dev/api/users'
+          keyphrase: 'API_ENDPOINTS'
           minimum-occurrences: 1
-          case-sensitive: false
+          case-sensitive: true
 
-      - name: Check for codespace API endpoint in Workouts.jsx
+      - name: Check for API integration in Workouts.jsx
         id: check-workouts
         continue-on-error: true
         uses: skills/action-keyphrase-checker@v2.0.0
         with:
           text-file: octofit-tracker/frontend/src/components/Workouts.jsx
-          keyphrase: '-8000.app.github.dev/api/workouts'
+          keyphrase: 'API_ENDPOINTS'
           minimum-occurrences: 1
-          case-sensitive: false
+          case-sensitive: true
 
       - name: Update comment - step results
         uses: GrantBirki/comment@v2.1.1
